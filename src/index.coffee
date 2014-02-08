@@ -1,6 +1,5 @@
 "use strict"
 
-logger = require 'logmimosa'
 esprima = require 'esprima'
 
 exports.registration = (mimosaConfig, register) ->
@@ -11,9 +10,9 @@ _validateJS = (mimosaConfig, options, next) ->
     try
       parsed = esprima.parse file.outputFileText, {tolerant: true}
       unless parsed.errors.length is 0
-        logger.error "Parsed errors occurred in [[ #{file.inputFileName} ]]"
+        mimosaConfig.log.error "Parsed errors occurred in [[ #{file.inputFileName} ]]"
         for error in parsed.errors
-          logger.info error.message
+          mimosaConfig.log.info error.message
     catch err
-      logger.error "js-validate failed to parse [[ #{file.inputFileName} ]] Error:", err
+      mimosaConfig.log.error "js-validate failed to parse [[ #{file.inputFileName} ]] Error:", err
   next()
