@@ -1,6 +1,6 @@
 {
   "name": "mimosa-js-validate",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/dbashford/mimosa-js-validate",
   "author": "David Bashford",
   "description": "A JavaScript validation Mimosa module",
@@ -22,7 +22,7 @@
     "javascript"
   ],
   "dependencies": {
-    "esprima": "~1.0.0"
+    "esprima": "1.2.2"
   },
   "license": "MIT",
   "engines": {
